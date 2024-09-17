@@ -8,11 +8,11 @@ import DeleteBook from './pages/DeleteBooks'
 const App = () => {
   return (
     <Routes>
-    <Route path='/' element></Route>
-    <Route path='/books/create' element = {<CreateBook></CreateBook>}></Route>
-    <Route path='/books/show:id' element={<ShowBook></ShowBook>}></Route>
-    <Route path='/books/edit:id' element={<EditBook></EditBook>}></Route>
-    <Route path='/books/delete:id' element={<DeleteBook></DeleteBook>}></Route>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/books/create' element = {<CreateBook/>}/>
+    <Route path='/books/show/:id' element={<ShowBook/>}/>
+    <Route path='/books/edit/:id' element={<EditBook/>}/>
+    <Route path='/books/delete/:id' element={<DeleteBook/>}/>
     </Routes>
   )
 }

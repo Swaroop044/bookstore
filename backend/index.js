@@ -13,11 +13,13 @@ app.use(express.json());
 //Option 1: Allow Alll Origiins with Default of cors(*)
 app.use(
     cors({
-      origin: ['http://localhost:3000'], // or your frontend's deployed URL
+      origin: ['https://bookstore-mern-tan.vercel.app'], // or your frontend's deployed URL
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['Content-Type'],
     })
 );
+
+
 //Option 2: Allow Custom Origins
 // app.use(
 //     cors({

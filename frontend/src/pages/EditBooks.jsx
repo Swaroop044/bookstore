@@ -15,7 +15,7 @@ const EditBook = () => {
   const {enqueueSnackbar} = useSnackbar();
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:9999/books/${id}`)
+    axios.get(`https://bookstore-mern-e6vc.vercel.app/books/${id}`)
     .then((response) => {
       setAuthor(response.data.author);
       setPublishYear(response.data.publishYear);

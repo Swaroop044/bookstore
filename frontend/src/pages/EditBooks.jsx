@@ -36,7 +36,7 @@ const EditBook = () => {
       publishYear
     };
     setLoading(true);
-    axios.put(`https://bookstore-mern-e6vc.vercel.app//${id}`, data)
+    axios.put(`https://bookstore-mern-e6vc.vercel.app/${id}`, data)
     .then(() => {
       setLoading(true);
       enqueueSnackbar('Book Edited successfully',{variant : 'success'});

@@ -13,7 +13,7 @@ app.use(express.json());
 //Option 1: Allow Alll Origiins with Default of cors(*)
 app.use(
     cors({
-      origin: ['https://bookstore-mern-tan.vercel.app','http://localhost:5173'], // or your frontend's deployed URL
+      origin: ['https://bookstore-mern-tan.vercel.app','http://localhost:5173','https://bookstore-mern-e6vc.vercel.app/'], // or your frontend's deployed URL
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['Content-Type'],
     })
@@ -34,6 +34,23 @@ app.get('/', (request, response) => {
 });
 
 app.use('/books', booksRoute);
+
+const router = express.Router();
+
+// In booksRoute.js
+router.post('/', async (req, res) => {
+    const { title, author, publishYear } = req.body;
+
+    const newBook = new Book({ title, author, publishYear });
+
+    try {
+        const savedBook = await newBook.save();
+        res.status(201).json(savedBook);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 
 
 mongoose

@@ -13,7 +13,7 @@ app.use(express.json());
 //Option 1: Allow Alll Origiins with Default of cors(*)
 app.use(
     cors({
-      origin: ['https://bookstore-mern-tan.vercel.app'], // or your frontend's deployed URL
+      origin: ['https://bookstore-mern-tan.vercel.app','http://localhost:5173'], // or your frontend's deployed URL
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['Content-Type'],
     })
